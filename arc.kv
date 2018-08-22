@@ -1,0 +1,89 @@
+#:kivy 1.10
+#:import math math
+
+
+<circle2>:
+    canvas:
+        Color:
+            rgba: (.811, .854, .921, 1)
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<circle1>:
+    canvas:
+        Color:
+            rgba: .105, .505, .627, 1
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<arc_reacter>:
+    circlearc1: arc1
+    circlearc2: arc2
+
+    canvas:
+        Color:
+            rgba: (0.478,0,0,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        color: (0.917, .788, .509, 1)
+        bold: True
+        font_size: 130
+        center_x: root.width / 2
+        top: root.top - 50
+        text: "IRON MAN"
+
+    circle1:
+        id: arc1
+        size: 200, 200
+        center: self.parent.center
+
+    circle2:
+        id: arc2
+        size: 150, 150
+        center: self.parent.center
+
+    lines:
+        canvas:
+            Color:
+                rgba: .403, .686, .776, 1
+            Line:
+                points: root.center_x, root.center_y + 100, root.center_x, root.center_y - 100
+                cap: "none"
+                width: 7
+            Line:
+                points: root.center_x + 100*math.sin(math.radians(36)), root.center_y - 100*math.cos(math.radians(36)), root.center_x - 100*math.sin(math.radians(36)), root.center_y + 100*math.cos(math.radians(36))
+                cap: "none"
+                width: 7
+            Line:
+                points: root.center_x + 100*math.sin(math.radians(72)), root.center_y - 100*math.cos(math.radians(72)), root.center_x - 100*math.sin(math.radians(72)), root.center_y + 100*math.cos(math.radians(72))
+                cap: "none"
+                width: 7
+            Line:
+                points: root.center_x + 100*math.sin(math.radians(108)), root.center_y - 100*math.cos(math.radians(108)), root.center_x - 100*math.sin(math.radians(108)), root.center_y + 100*math.cos(math.radians(108))
+                cap: "none"
+                width: 7
+            Line:
+                points: root.center_x + 100*math.sin(math.radians(144)), root.center_y - 100*math.cos(math.radians(144)), root.center_x - 100*math.sin(math.radians(144)), root.center_y + 100*math.cos(math.radians(144))
+                cap: "none"
+                width: 7
+
+
+    circle1:
+        id: arc1
+        size: 100, 100
+        center: self.parent.center
+
+    inner_circle:
+        canvas:
+            Color:
+                rgba: root.color_code
+            Ellipse:
+                pos: self.pos
+                size: self.size
+        size: 50, 50
+        center: self.parent.center

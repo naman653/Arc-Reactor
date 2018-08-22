@@ -1,0 +1,3 @@
+title=Arc Reactor
+author=Naman Jain
+orientation=portrait
